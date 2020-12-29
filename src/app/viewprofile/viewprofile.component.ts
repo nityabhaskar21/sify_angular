@@ -15,8 +15,7 @@ export class ViewprofileComponent implements OnInit {
   msg!: string;
 
   constructor(public usernService: UsernService) {
-    this.username = localStorage.getItem('username');
-    this.username = 'sly21';
+    this.username = usernService.username;
   }
 
   ngOnInit(): void {

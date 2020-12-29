@@ -2,7 +2,7 @@
 <div [hidden]="!msg" class="alert alert-danger">{{msg}}</div>
 <section [hidden]="msg" class="col-7 mx-auto">
   <ul class="list-group">
-    <li class="list-group-item list-group-item-info">UserId: {{data.doc._id}}</li>
+    <li class="list-group-item bg-danger text-white">UserId: {{data.doc._id}}</li>
     <li class="list-group-item list-group-item-info">User Name: {{data.doc.username}}</li>
     <li class="list-group-item list-group-item-info">Full Name: {{data.doc.fname | titlecase}}
       {{data.doc.lname | titlecase}}</li>

@@ -8,6 +8,7 @@ import { ViewallusersComponent } from './viewallusers/viewallusers.component';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'addprofile', component: AddprofileComponent },
   { path: 'viewusers', component: ViewallusersComponent },
   { path: 'logout', component: LogoutComponent },
+  { path: 'addproduct', component: AddproductComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 

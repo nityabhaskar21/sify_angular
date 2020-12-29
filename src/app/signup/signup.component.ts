@@ -22,6 +22,7 @@ export class SignupComponent implements OnInit {
         this.error = data.error;
       } else {
         this.msg = data.msg;
+        this.usernService.addusername(data.doc.username);
       }
     });
 
