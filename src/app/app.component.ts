@@ -13,9 +13,8 @@ export class AppComponent {
 
   constructor(public usernService: UsernService) {}
   ngOnInit(): void {
-    if (this.usernService.isLogged == 'logged') {
+    if (this.usernService.username == 'logged') {
       this.showme = true;
-      this.username = this.usernService.username;
     } else {
       this.showme = false;
     }

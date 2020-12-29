@@ -9,9 +9,10 @@ import { Profileuser } from './profileuser';
   providedIn: 'root'
 })
 export class UsernService {
-  isLogged: string;
   username: string;
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient) {
+    this.username = localStorage.getItem('username');
+  }
 
   adduser(user: User): Observable<any> {
     return this.http.post(`http://localhost:8080/signup`, user);
@@ -27,5 +28,22 @@ export class UsernService {
 
   getprofile(username: string): Observable<any> {
     return this.http.get(`http://localhost:8080/${username}/profile`);
+  }
+
+  addprofile(profileuser: Profileuser): Observable<any> {
+    return this.http.post(
+      `http://localhost:8080/sid22/addprofile`,
+      profileuser
+    );
+  }
+
+  logoutuser(): void {
+    this.username = '';
+    localStorage.setItem('username', '');
+  }
+
+  addusername(uname: string) {
+    this.username = uname;
+    localStorage.setItem('username', uname);
   }
 }

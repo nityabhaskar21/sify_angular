@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Profileuser } from '../profileuser';
 import { UsernService } from '../usern.service';
+import { async } from 'q';
 
 @Component({
   selector: 'app-viewprofile',
@@ -10,14 +11,29 @@ import { UsernService } from '../usern.service';
 export class ViewprofileComponent implements OnInit {
   profileuser: Profileuser = new Profileuser();
   data!: any;
-  username: 'sly21';
+  username: string;
+  msg!: string;
 
-  constructor(public usernService: UsernService) {}
+  constructor(public usernService: UsernService) {
+    this.username = localStorage.getItem('username');
+    this.username = 'sly21';
+  }
 
   ngOnInit(): void {
-    this.usernService.getprofile('sly21').subscribe(data => {
-      console.log(data);
-      this.data = data;
-    });
+    this.getprofile();
   }
+
+  getprofile(): void {
+    if (!this.username) {
+      this.msg = 'User not logged in. Login please';
+      return;
+    } else {
+      this.usernService.getprofile(this.username).subscribe(data => {
+        console.log(data);
+        this.data = data;
+      });
+    }
+  }
+
+  //getProfile();
 }

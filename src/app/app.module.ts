@@ -13,9 +13,10 @@ import { ViewprofileComponent } from './viewprofile/viewprofile.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ViewallusersComponent } from './viewallusers/viewallusers.component';
 import { HomeComponent } from './home/home.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
-  declarations: [AppComponent, SignupComponent, LoginComponent, AddprofileComponent, ViewprofileComponent, LogoutComponent, ViewallusersComponent, HomeComponent],
+  declarations: [AppComponent, SignupComponent, LoginComponent, AddprofileComponent, ViewprofileComponent, LogoutComponent, ViewallusersComponent, HomeComponent, PagenotfoundComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]

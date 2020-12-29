@@ -24,10 +24,7 @@ export class SignupComponent implements OnInit {
         this.msg = data.msg;
       }
     });
-    this.usernService.isLogged = 'logged';
-    this.usernService.username = this.user.username;
-    localStorage.setItem('isLogged', 'logged');
-    localStorage.setItem('username', this.user.username);
+
     this.user = new User();
     this.form.reset();
   }
