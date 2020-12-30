@@ -1,0 +1,6 @@
+#startup {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, #7ed56fc7, #28b485c2), url(../../assets/startup.jpg);
+  background-size: cover;
+  background-position: top
+}

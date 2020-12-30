@@ -9,8 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { BuyproductsComponent } from './buyproducts/buyproducts.component';
+import { ViewproductsComponent } from './viewproducts/viewproducts.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
@@ -19,6 +22,8 @@ const routes: Routes = [
   { path: 'viewusers', component: ViewallusersComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'addproduct', component: AddproductComponent },
+  { path: 'buyproducts', component: BuyproductsComponent },
+  { path: 'viewproducts/:category', component: ViewproductsComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 

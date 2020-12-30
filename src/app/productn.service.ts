@@ -15,4 +15,8 @@ export class ProductnService {
       product
     );
   }
+
+  viewproductbycat(category: string): Observable<any> {
+    return this.http.get(`http://localhost:8080/product/viewcat/${category}`);
+  }
 }

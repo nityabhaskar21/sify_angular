@@ -10,8 +10,10 @@ import { Profileuser } from './profileuser';
 })
 export class UsernService {
   username: string;
+  userid: string;
   constructor(public http: HttpClient) {
     this.username = localStorage.getItem('username');
+    this.userid = localStorage.getItem('userid');
   }
 
   adduser(user: User): Observable<any> {
@@ -30,9 +32,9 @@ export class UsernService {
     return this.http.get(`http://localhost:8080/${username}/profile`);
   }
 
-  addprofile(profileuser: Profileuser): Observable<any> {
+  addprofile(profileuser: Profileuser, uname: string): Observable<any> {
     return this.http.post(
-      `http://localhost:8080/sid22/addprofile`,
+      `http://localhost:8080/${uname}/addprofile`,
       profileuser
     );
   }
@@ -40,10 +42,12 @@ export class UsernService {
   logoutuser(): void {
     this.username = '';
     localStorage.setItem('username', '');
+    localStorage.setItem('userid', '');
   }
 
-  addusername(uname: string) {
+  addusernameid(uname: string, uid: string) {
     this.username = uname;
     localStorage.setItem('username', uname);
+    localStorage.setItem('userid', uid);
   }
 }

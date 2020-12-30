@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
         this.error = data.error;
       } else {
         this.msg = data.msg;
-        this.usernService.addusername(data.doc.username);
+        this.usernService.addusernameid(data.doc.username, data.doc._id);
       }
     });
 

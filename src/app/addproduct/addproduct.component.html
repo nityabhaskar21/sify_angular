@@ -18,6 +18,22 @@
 
   <div class="form-group">
     <label for="category">Category</label>
+    <select required [(ngModel)]="product.category" #category="ngModel" name="txtcategory" class="form-control"
+      id="category">
+      <option value="mobiles" selected>Mobiles</option>
+      <option value="computers">Computers</option>
+      <option value="garments">Garments</option>
+      <option value="appliances">Appliances</option>
+      <option value="sports">Sports</option>
+      <option value="games">Games</option>
+    </select>
+    <div class="alert alert-danger" *ngIf="category.touched && !category.valid">
+      <div *ngIf="category.errors.required">Category is required.</div>
+    </div>
+  </div>
+
+  <!-- <div class="form-group">
+    <label for="category">Category</label>
     <input [(ngModel)]="product.category" #category="ngModel" name="txtcategory" type="text" id="category"
       class="form-control" required minlength="5" maxlength="20" pattern="[a-zA-Z]*" autocomplete="off">
     <div class="alert alert-danger" *ngIf="category.touched && !category.valid">
@@ -26,7 +42,7 @@
       <div *ngIf="category.errors.maxlength">Category must be maximum 20 characters long.</div>
       <div *ngIf="category.errors.pattern">Category must contain alphabets only.</div>
     </div>
-  </div>
+  </div> -->
 
   <div class="form-group">
     <label for="price">Price</label>
@@ -46,5 +62,5 @@
       <div *ngIf="description.errors.required">description is required.</div>
     </div>
   </div>
-  <button class="btn btn-primary" [disabled]="!frm.valid">AddProduct</button>
+  <button class="btn btn-primary" [disabled]="!frm.valid">Sell Now</button>
 </form>

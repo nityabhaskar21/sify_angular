@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Profileuser } from '../profileuser';
 import { UsernService } from '../usern.service';
 import { NgForm } from '@angular/forms';
+import { Editprofile } from '../editprofile';
 
 @Component({
   selector: 'app-addprofile',
@@ -9,18 +10,30 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./addprofile.component.css']
 })
 export class AddprofileComponent implements OnInit {
-  profileuser: Profileuser = new Profileuser();
+  data!: any;
+  username: string;
   error!: string;
   msg!: string;
+  edit;
   @ViewChild('frm')
   form: NgForm;
 
-  constructor(public usernService: UsernService) {}
+  constructor(public usernService: UsernService) {
+    this.username = this.usernService.username;
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (!this.usernService) {
+      this.error = 'Login Please!';
+    } else {
+      this.usernService.getprofile(this.username).subscribe(data => {
+        this.data = data.pdata;
+      });
+    }
+  }
 
   addprofile() {
-    this.usernService.addprofile(this.profileuser).subscribe(data => {
+    this.usernService.addprofile(this.data, this.username).subscribe(data => {
       if (data.error) {
         this.error = data.error;
       } else {
@@ -28,7 +41,7 @@ export class AddprofileComponent implements OnInit {
       }
     });
 
-    this.profileuser = new Profileuser();
+    this.data = {};
     this.form.reset();
   }
 }

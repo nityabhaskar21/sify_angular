@@ -15,9 +15,12 @@ import { ViewallusersComponent } from './viewallusers/viewallusers.component';
 import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AddproductComponent } from './addproduct/addproduct.component';
+import { BuyproductsComponent } from './buyproducts/buyproducts.component';
+import { ViewproductbycatComponent } from './viewproductbycat/viewproductbycat.component';
+import { ViewproductsComponent } from './viewproducts/viewproducts.component';
 
 @NgModule({
-  declarations: [AppComponent, SignupComponent, LoginComponent, AddprofileComponent, ViewprofileComponent, LogoutComponent, ViewallusersComponent, HomeComponent, PagenotfoundComponent, AddproductComponent],
+  declarations: [AppComponent, SignupComponent, LoginComponent, AddprofileComponent, ViewprofileComponent, LogoutComponent, ViewallusersComponent, HomeComponent, PagenotfoundComponent, AddproductComponent, BuyproductsComponent, ViewproductbycatComponent, ViewproductsComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]

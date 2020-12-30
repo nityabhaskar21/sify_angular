@@ -1,0 +1,20 @@
+<div [hidden]="!msg" class="alert alert-success">{{msg}}</div>
+<div [hidden]="!error" class="alert alert-danger">{{error}}</div>
+<div class="mt-5">
+  <table class="col-8 mx-auto table table-primary">
+    <tr class="bg-danger text-white">
+      <td>Product Name</td>
+      <td>Vategory</td>
+      <td>Price</td>
+      <td>Description</td>
+      <td>Purchase</td>
+    </tr>
+    <tr *ngFor="let p of products | slice:1">
+      <td>{{p.pname}}</td>
+      <td>{{p.category}}</td>
+      <td>{{p.price}}</td>
+      <td>{{p.description}}</td>
+      <td><input type="button" class="btn btn-dark" value="Purchase" (click)="purchase(p._id)"></td>
+    </tr>
+  </table>
+</div>
