@@ -1,0 +1,21 @@
+<div [hidden]="!msg" class="alert alert-success">{{msg}}</div>
+<div [hidden]="!error" class="alert alert-danger">{{error}}</div>
+<header class="display-4 text-center mb-1">My Listings</header>
+<div class="mt-5">
+  <table class="col-8 mx-auto table table-primary">
+    <tr class="bg-danger text-white">
+      <td>Product Name</td>
+      <td>Category</td>
+      <td>Price</td>
+      <td>Description</td>
+
+    </tr>
+    <tr *ngFor="let p of products | slice:1">
+      <td>{{p.pname}}</td>
+      <td>{{p.category}}</td>
+      <td>{{p.price}}</td>
+      <td>{{p.description}}</td>
+
+    </tr>
+  </table>
+</div>

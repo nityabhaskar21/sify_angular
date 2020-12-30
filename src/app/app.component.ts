@@ -10,13 +10,11 @@ export class AppComponent {
   showme: boolean = false;
   title = 'sify-client';
   username: string;
+  userid: string;
 
   constructor(public usernService: UsernService) {}
   ngOnInit(): void {
-    if (this.usernService.username == 'logged') {
-      this.showme = true;
-    } else {
-      this.showme = false;
-    }
+    this.username = this.usernService.username;
+    this.userid = this.usernService.userid;
   }
 }

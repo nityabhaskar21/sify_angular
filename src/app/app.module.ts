@@ -18,9 +18,10 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 import { BuyproductsComponent } from './buyproducts/buyproducts.component';
 import { ViewproductbycatComponent } from './viewproductbycat/viewproductbycat.component';
 import { ViewproductsComponent } from './viewproducts/viewproducts.component';
+import { ViewproductbymerchantComponent } from './viewproductbymerchant/viewproductbymerchant.component';
 
 @NgModule({
-  declarations: [AppComponent, SignupComponent, LoginComponent, AddprofileComponent, ViewprofileComponent, LogoutComponent, ViewallusersComponent, HomeComponent, PagenotfoundComponent, AddproductComponent, BuyproductsComponent, ViewproductbycatComponent, ViewproductsComponent],
+  declarations: [AppComponent, SignupComponent, LoginComponent, AddprofileComponent, ViewprofileComponent, LogoutComponent, ViewallusersComponent, HomeComponent, PagenotfoundComponent, AddproductComponent, BuyproductsComponent, ViewproductbycatComponent, ViewproductsComponent, ViewproductbymerchantComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
