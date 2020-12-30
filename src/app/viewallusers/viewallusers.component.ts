@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { UsernService } from '../usern.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-viewallusers',
