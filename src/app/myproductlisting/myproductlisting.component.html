@@ -1,6 +1,6 @@
 <div [hidden]="!msg" class="alert alert-success">{{msg}}</div>
 <div [hidden]="!error" class="alert alert-danger">{{error}}</div>
-<header class="display-4 text-center mb-1">Product Listings</header>
+<header class="display-4 text-center mb-1">My Listings</header>
 <div class="mt-5">
   <table class="col-8 mx-auto table table-primary">
     <tr class="bg-danger text-white">
@@ -8,8 +8,6 @@
       <td>Category</td>
       <td>Price</td>
       <td>Description</td>
-      <td>Status</td>
-      <td>Buy</td>
 
     </tr>
     <tr *ngFor="let p of products | slice:1">
@@ -17,11 +15,6 @@
       <td>{{p.category}}</td>
       <td>{{p.price}}</td>
       <td>{{p.description}}</td>
-      <td *ngIf="!p.ispurchased || p.ispurchased == false">Available</td>
-      <td *ngIf="p.ispurchased == true">Sold Out</td>
-      <td><input type="button" class="btn btn-dark" [disabled]="p.ispurchased == true" value="Buy"
-          (click)="purchase(p._id)"></td>
-
     </tr>
   </table>
 </div>

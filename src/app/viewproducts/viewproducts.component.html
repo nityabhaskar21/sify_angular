@@ -7,14 +7,19 @@
       <td>Vategory</td>
       <td>Price</td>
       <td>Description</td>
-      <td>Purchase</td>
+      <td>Status</td>
+      <td>Buy</td>
+
     </tr>
     <tr *ngFor="let p of products | slice:1">
       <td>{{p.pname}}</td>
       <td>{{p.category}}</td>
       <td>{{p.price}}</td>
       <td>{{p.description}}</td>
-      <td><input type="button" class="btn btn-dark" value="Purchase" (click)="purchase(p._id)"></td>
+      <td *ngIf="!p.ispurchased || p.ispurchased == false">Available</td>
+      <td *ngIf="p.ispurchased == true">Sold Out</td>
+      <td><input type="button" class="btn btn-dark" [disabled]="p.ispurchased == true" value="Buy"
+          (click)="purchase(p._id)"></td>
     </tr>
   </table>
 </div>

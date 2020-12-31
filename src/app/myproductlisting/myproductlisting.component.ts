@@ -8,11 +8,11 @@ import { Order } from '../order';
 import { UsernService } from '../usern.service';
 
 @Component({
-  selector: 'app-viewproductbymerchant',
-  templateUrl: './viewproductbymerchant.component.html',
-  styleUrls: ['./viewproductbymerchant.component.css']
+  selector: 'app-myproductlisting',
+  templateUrl: './myproductlisting.component.html',
+  styleUrls: ['./myproductlisting.component.css']
 })
-export class ViewproductbymerchantComponent implements OnInit {
+export class MyproductlistingComponent implements OnInit {
   products: [{}] = [{}];
   uid!: string;
   error!: string;
@@ -33,21 +33,6 @@ export class ViewproductbymerchantComponent implements OnInit {
         this.products = res;
         console.log(this.products);
       });
-    });
-  }
-
-  purchase(pid: string): void {
-    this.orderdata.buyerid = this.usernService.userid;
-    this.orderdata.iscancelled = false;
-    this.orderdata.orderstatus = true;
-    this.orderdata.productid = pid;
-
-    this.ordernService.placeorder(this.orderdata).subscribe(data => {
-      if (data.error) {
-        this.error = data.error;
-      } else {
-        this.msg = 'Order successfully placed!';
-      }
     });
   }
 }

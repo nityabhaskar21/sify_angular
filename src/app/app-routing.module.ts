@@ -12,6 +12,8 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 import { BuyproductsComponent } from './buyproducts/buyproducts.component';
 import { ViewproductsComponent } from './viewproducts/viewproducts.component';
 import { ViewproductbymerchantComponent } from './viewproductbymerchant/viewproductbymerchant.component';
+import { MyordersComponent } from './myorders/myorders.component';
+import { MyproductlistingComponent } from './myproductlisting/myproductlisting.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: 'buyproducts', component: BuyproductsComponent },
   { path: 'viewproducts/:category', component: ViewproductsComponent },
   { path: 'viewprodmerchant/:mid', component: ViewproductbymerchantComponent },
+  { path: 'showmyorders/:bid', component: MyordersComponent },
+  { path: 'mylisting/:mid', component: MyproductlistingComponent },
   { path: '**', component: PagenotfoundComponent }
 ];
 

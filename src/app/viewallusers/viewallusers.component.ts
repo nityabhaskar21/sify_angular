@@ -16,7 +16,9 @@ export class ViewallusersComponent implements OnInit {
   ngOnInit(): void {
     this.usernService.viewallusers().subscribe(data => {
       console.log(data);
-      this.users = data.doc;
+      this.users = data.doc.filter(
+        d => d.username != this.usernService.username
+      );
     });
   }
 }
