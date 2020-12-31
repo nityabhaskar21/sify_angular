@@ -1,0 +1,12 @@
+<header class="display-4 text-center mb-1">Order Details</header>
+<div [hidden]="!msg" class="alert alert-danger">{{msg}}</div>
+<section [hidden]="msg" class="col-7 mx-auto">
+  <ul class="list-group">
+    <li class="list-group-item bg-danger text-white">Product ID: {{products._id}}</li>
+    <li class="list-group-item list-group-item-info">Product Name: {{products.pname | titlecase}}</li>
+    <li class="list-group-item list-group-item-info">Category: {{products.category | uppercase}}</li>
+    <li class="list-group-item list-group-item-info">Price: {{products.price | currency:'INR'}}
+    <li class="list-group-item list-group-item-info">Description: {{products.description | titlecase}}</li>
+
+  </ul>
+</section>

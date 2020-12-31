@@ -1,1 +1,19 @@
-<p>myorders works!</p>
+<div [hidden]="!msg" class="alert alert-success">{{msg}}</div>
+<div [hidden]="!error" class="alert alert-danger">{{error}}</div>
+<header class="display-4 text-center mb-1">My Orders</header>
+<div class="mt-5">
+  <table class="col-8 mx-auto table table-primary">
+    <tr class="bg-danger text-white">
+      <td>Order ID</td>
+      <td>Order Status</td>
+      <td>More Details</td>
+    </tr>
+    <tr *ngFor="let o of orderdata ">
+      <td>{{o._id}}</td>
+      <td *ngIf="o.orderstatus == true">Successful</td>
+      <td *ngIf="o.orderstatus == false">Unsuccessful</td>
+      <td><input type="button" class="btn btn-dark" value="More Details" routerLink="/orderdetails/{{o.productid}}">
+      </td>
+    </tr>
+  </table>
+</div>
