@@ -24,11 +24,11 @@ export class SignupComponent implements OnInit {
       } else {
         this.msg = data.msg;
         this.usernService.addusernameid(data.doc.username, data.doc._id);
+        this.router.navigateByUrl('/home');
       }
     });
 
     this.user = new User();
     this.form.reset();
-    this.router.navigateByUrl('/home');
   }
 }

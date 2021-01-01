@@ -17,6 +17,7 @@ import { MyproductlistingComponent } from './myproductlisting/myproductlisting.c
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { ProductyGuard } from './producty.guard';
 import { StartupregisterComponent } from './startupregister/startupregister.component';
+import { EditreviewComponent } from './editreview/editreview.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -63,6 +64,11 @@ const routes: Routes = [
   {
     path: 'showmyorders/:bid',
     component: MyordersComponent,
+    canActivate: [ProductyGuard]
+  },
+  {
+    path: 'editreview/:oid',
+    component: EditreviewComponent,
     canActivate: [ProductyGuard]
   },
   {

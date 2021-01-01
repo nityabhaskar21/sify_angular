@@ -6,13 +6,20 @@
     <tr class="bg-danger text-white">
       <td>Order ID</td>
       <td>Order Status</td>
+      <td>Rating</td>
+      <td>Review</td>
       <td>More Details</td>
+      <td>Edit review</td>
     </tr>
     <tr *ngFor="let o of orderdata ">
       <td>{{o._id}}</td>
       <td *ngIf="o.orderstatus == true">Successful</td>
       <td *ngIf="o.orderstatus == false">Unsuccessful</td>
+      <td>{{o.rating}}</td>
+      <td>{{o.review}}</td>
       <td><input type="button" class="btn btn-dark" value="More Details" routerLink="/orderdetails/{{o.productid}}">
+      </td>
+      <td><input type="button" class="btn btn-dark" value="Edit Reviews" routerLink="/editreview/{{o._id}}">
       </td>
     </tr>
   </table>
