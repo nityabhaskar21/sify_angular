@@ -3,6 +3,7 @@ import { User } from '../user';
 import { NgForm } from '@angular/forms';
 import { Loginuser } from '../loginuser';
 import { UsernService } from '../usern.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   error!: string;
   @ViewChild('frm')
   form: NgForm;
-  constructor(public usernService: UsernService) {}
+  constructor(public usernService: UsernService, public router: Router) {}
 
   ngOnInit(): void {}
 
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
       } else {
         this.msg = data.msg;
         this.usernService.addusernameid(data.doc.username, data.doc._id);
+        this.router.navigateByUrl('/home');
       }
     });
 

@@ -22,9 +22,10 @@ import { ViewproductbymerchantComponent } from './viewproductbymerchant/viewprod
 import { MyordersComponent } from './myorders/myorders.component';
 import { MyproductlistingComponent } from './myproductlisting/myproductlisting.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+import { StartupregisterComponent } from './startupregister/startupregister.component';
 
 @NgModule({
-  declarations: [AppComponent, SignupComponent, LoginComponent, AddprofileComponent, ViewprofileComponent, LogoutComponent, ViewallusersComponent, HomeComponent, PagenotfoundComponent, AddproductComponent, BuyproductsComponent, ViewproductbycatComponent, ViewproductsComponent, ViewproductbymerchantComponent, MyordersComponent, MyproductlistingComponent, OrderdetailsComponent],
+  declarations: [AppComponent, SignupComponent, LoginComponent, AddprofileComponent, ViewprofileComponent, LogoutComponent, ViewallusersComponent, HomeComponent, PagenotfoundComponent, AddproductComponent, BuyproductsComponent, ViewproductbycatComponent, ViewproductsComponent, ViewproductbymerchantComponent, MyordersComponent, MyproductlistingComponent, OrderdetailsComponent, StartupregisterComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsernService } from '../usern.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logout',
@@ -9,7 +10,7 @@ import { UsernService } from '../usern.service';
 export class LogoutComponent implements OnInit {
   msg!: string;
   username: string;
-  constructor(public usernService: UsernService) {}
+  constructor(public usernService: UsernService, public router: Router) {}
 
   ngOnInit(): void {
     this.username = this.usernService.username;
@@ -23,6 +24,7 @@ export class LogoutComponent implements OnInit {
     console.log('Logged Out!');
     this.usernService.logoutuser();
     this.msg = 'Logged Out!';
+    this.router.navigateByUrl('/startupregister');
   }
 
   cancellogout() {

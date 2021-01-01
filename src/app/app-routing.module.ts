@@ -15,23 +15,66 @@ import { ViewproductbymerchantComponent } from './viewproductbymerchant/viewprod
 import { MyordersComponent } from './myorders/myorders.component';
 import { MyproductlistingComponent } from './myproductlisting/myproductlisting.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+import { ProductyGuard } from './producty.guard';
+import { StartupregisterComponent } from './startupregister/startupregister.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [ProductyGuard] },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'viewprofile', component: ViewprofileComponent },
-  { path: 'addprofile', component: AddprofileComponent },
-  { path: 'viewusers', component: ViewallusersComponent },
-  { path: 'logout', component: LogoutComponent },
-  { path: 'addproduct', component: AddproductComponent },
-  { path: 'buyproducts', component: BuyproductsComponent },
-  { path: 'viewproducts/:category', component: ViewproductsComponent },
-  { path: 'viewprodmerchant/:mid', component: ViewproductbymerchantComponent },
-  { path: 'showmyorders/:bid', component: MyordersComponent },
-  { path: 'orderdetails/:oid', component: OrderdetailsComponent },
-  { path: 'mylisting/:mid', component: MyproductlistingComponent },
+  { path: 'startupregister', component: StartupregisterComponent },
+  {
+    path: 'viewprofile',
+    component: ViewprofileComponent,
+    canActivate: [ProductyGuard]
+  },
+  {
+    path: 'addprofile',
+    component: AddprofileComponent,
+    canActivate: [ProductyGuard]
+  },
+  {
+    path: 'viewusers',
+    component: ViewallusersComponent,
+    canActivate: [ProductyGuard]
+  },
+  { path: 'logout', component: LogoutComponent, canActivate: [ProductyGuard] },
+  {
+    path: 'addproduct',
+    component: AddproductComponent,
+    canActivate: [ProductyGuard]
+  },
+  {
+    path: 'buyproducts',
+    component: BuyproductsComponent,
+    canActivate: [ProductyGuard]
+  },
+  {
+    path: 'viewproducts/:category',
+    component: ViewproductsComponent,
+    canActivate: [ProductyGuard]
+  },
+  {
+    path: 'viewprodmerchant/:mid',
+    component: ViewproductbymerchantComponent,
+    canActivate: [ProductyGuard]
+  },
+  {
+    path: 'showmyorders/:bid',
+    component: MyordersComponent,
+    canActivate: [ProductyGuard]
+  },
+  {
+    path: 'orderdetails/:oid',
+    component: OrderdetailsComponent,
+    canActivate: [ProductyGuard]
+  },
+  {
+    path: 'mylisting/:mid',
+    component: MyproductlistingComponent,
+    canActivate: [ProductyGuard]
+  },
   { path: '**', component: PagenotfoundComponent }
 ];
 

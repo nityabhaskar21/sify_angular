@@ -12,3 +12,11 @@
   color: rgba(255, 251, 0, 0.822);
   letter-spacing: 15px;
 }
+
+#startup input {
+  font-family: cursive;
+  padding: 0.5rem;
+  margin: 2px;
+}
+
+input:hover {}
