@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
   <header class="display-4 text-center mb-1">All Merchants</header>
 
   <table class="col-8 mx-auto table table-primary table-striped table-hover">
@@ -20,4 +20,32 @@
 
     </tr>
   </table>
+</section> -->
+
+<section>
+  <header class="display-4 text-center mb-1">All Merchants</header>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4 " *ngFor="let u of users">
+        <div class="card mt-1 mb-1 m-sm-1 m-md-2 m-lg-3">
+          <img class="card-img-top" src="./../../assets/profile.svg" alt="Card image cap">
+          <div class="card-body p-2">
+            <h5 class="card-title text-center">@ {{u.username}}</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Name: {{u.fname +' '+ u.lname | titlecase}}</li>
+            <li class="list-group-item">Email: {{u.email }}</li>
+            <li class="list-group-item">Gender: {{u.gender | uppercase}}</li>
+            <li class="list-group-item">DOJ: {{u.createdAt | date:'dd-MM-yyyy'}}</li>
+          </ul>
+          <div class="card-body p-2 text-center">
+            <input type="button" class="btn btn-dark" value="Listings" routerLink="/viewprodmerchant/{{u._id}}">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
 </section>
