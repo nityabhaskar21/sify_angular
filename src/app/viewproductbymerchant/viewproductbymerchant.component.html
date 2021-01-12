@@ -1,7 +1,7 @@
 <div [hidden]="!msg" class="alert alert-success">{{msg}}</div>
 <div [hidden]="!error" class="alert alert-danger">{{error}}</div>
 <header class="display-4 text-center mb-1">Product Listings</header>
-<div class="mt-5">
+<!-- <div class="mt-5">
   <table class="col-8 mx-auto table table-primary">
     <tr class="bg-danger text-white">
       <td>Product Name</td>
@@ -24,4 +24,30 @@
 
     </tr>
   </table>
-</div>
+</div> -->
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4 " *ngFor="let p of products | slice:1">
+        <div class="card mt-1 mb-1 m-sm-1 m-md-2 m-lg-3">
+          <img class="card-img-top" src="./../../assets/profile.svg" alt="Card image cap">
+          <div class="card-body p-2">
+            <h5 class="card-title text-center">{{p.pname}}</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Category: {{p.category | titlecase}}</li>
+            <li class="list-group-item">Price: {{p.price | currency:'INR'}}</li>
+            <li class="list-group-item">Description: {{p.description}}</li>
+            <li class="list-group-item" *ngIf="!p.ispurchased || p.ispurchased == false">Status: Available</li>
+            <li class="list-group-item" *ngIf="p.ispurchased == true">Status: Sold Out</li>
+          </ul>
+          <div class="card-body p-2 text-center">
+            <input type="button" class="btn btn-dark" [disabled]="p.ispurchased == true" value="Buy"
+              (click)="purchase(p._id)">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
